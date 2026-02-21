@@ -1,2 +1,2 @@
 # vending_machine
-its a vending machine project which work on logisim
+its a vending machine project,which work on logisiam
