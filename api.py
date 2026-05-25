@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
+import os
 
 app = FastAPI(title="Vending Machine API")
 
@@ -15,7 +17,7 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    return JSONResponse({"message": "Welcome to Vending Machine API", "status": "online"})
+    return FileResponse("index.html")
 
 @app.get("/health")
 async def health_check():
